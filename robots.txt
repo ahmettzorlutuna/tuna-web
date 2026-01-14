@@ -1,0 +1,15 @@
+# Robots.txt for Tuna App
+# https://tuna-web.vercel.app
+
+User-agent: *
+Allow: /
+
+# Block admin and private paths
+Disallow: /.git/
+Disallow: /.agent/
+
+# Sitemap location
+Sitemap: https://tuna-web.vercel.app/sitemap.xml
+
+# Crawl-delay for politeness
+Crawl-delay: 1
