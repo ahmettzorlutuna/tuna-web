@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Photos/logo.png" alt="Tuna Logo" width="120" height="120">
+  <img src="Photos/logo2.png" alt="Tuna Logo" width="120" height="120">
 </p>
 
 <h1 align="center">Tuna</h1>
@@ -138,6 +138,7 @@ All plans include a **7-day free trial**. Cancel anytime.
 | **AI Engine** | Google Gemini Flash 2.0 |
 | **Backend** | Firebase (Remote Config, Analytics) |
 | **Payments** | RevenueCat + StoreKit 2 |
+| **Hosting** | Vercel (Landing Page) |
 | **Design** | Human Interface Guidelines, Swiss Style |
 
 ---
@@ -170,9 +171,9 @@ Read our full [Privacy Policy](https://ahmettzorlutuna.github.io/tuna-legal/PRIV
 
 ## 📋 Legal
 
-- [Privacy Policy](https://ahmettzorlutuna.github.io/tuna-legal/PRIVACY_POLICY.md)
-- [Terms of Service](https://ahmettzorlutuna.github.io/tuna-legal/TERMS_OF_SERVICE.md)
-- [Medical Disclaimer](https://ahmettzorlutuna.github.io/tuna-legal/MEDICAL_DISCLAIMER.md)
+- [Privacy Policy](https://www.tunahealth.app/privacy-policy.html)
+- [Terms of Service](https://www.tunahealth.app/terms-of-service.html)
+- [Medical Disclaimer](https://www.tunahealth.app/medical-disclaimer.html)
 
 > ⚠️ **Important:** Tuna is an informational tool and NOT a medical device. Always verify ingredients on physical labels and consult healthcare professionals for allergy-related decisions.
 
