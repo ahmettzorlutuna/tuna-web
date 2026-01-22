@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Primary Meta Tags -->
+    <title>Help Center - Tuna App</title>
+    <meta name="title" content="Help Center - Tuna App">
+    <meta name="description"
+        content="Get help with Tuna app. Find answers to frequently asked questions about food scanning, allergen detection, subscriptions, and more.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://tuna-web.vercel.app/help-center.html">
+
+    <!-- Theme & Mobile -->
+    <meta name="theme-color" content="#00A896">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Tuna">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="Photos/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="Photos/apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tuna-web.vercel.app/help-center.html">
+    <meta property="og:title" content="Help Center - Tuna App">
+    <meta property="og:description" content="Get help with Tuna app. Find answers to FAQs.">
+    <meta property="og:image" content="https://tuna-web.vercel.app/Photos/og-image.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+                    colors: {
+                        tuna: {
+                            teal: '#00A896',
+                            tealDark: '#008C7D',
+                            dark: '#1B263B',
+                            gray: '#F5F5F5',
+                            border: '#E5E5E5'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .mechanical-hover {
+            transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        details summary {
+            cursor: pointer;
+        }
+
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details[open] .faq-icon {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-tuna-dark antialiased">
+
+    <!-- Navigation -->
+    <header role="banner">
+        <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-tuna-border">
+            <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <a href="/" aria-label="Tuna - Home">
+                        <span class="text-2xl font-bold tracking-tight">Tuna</span>
+                    </a>
+                </div>
+                <a href="https://apps.apple.com/app/id6757370781" target="_blank" rel="noopener noreferrer"
+                    class="px-7 py-3 bg-tuna-dark text-white text-sm font-semibold mechanical-hover hover:bg-black">
+                    Download App
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-24 px-6 max-w-4xl mx-auto">
+        <section>
+            <p class="text-tuna-teal font-semibold tracking-widest uppercase text-sm mb-4">Support</p>
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Help Center</h1>
+            <p class="text-xl text-tuna-dark/60 mb-12">Find answers to common questions about Tuna.</p>
+
+            <!-- Quick Actions -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
+                <a href="/contact.html"
+                    class="flex items-center gap-4 p-6 border border-tuna-border mechanical-hover hover:border-tuna-teal hover:bg-tuna-teal/5 group">
+                    <div
+                        class="w-12 h-12 bg-tuna-teal/10 flex items-center justify-center group-hover:bg-tuna-teal group-hover:text-white text-tuna-teal">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold">Contact Support</h3>
+                        <p class="text-sm text-tuna-dark/60">Get help via email</p>
+                    </div>
+                </a>
+                <a href="https://apps.apple.com/app/id6757370781" target="_blank" rel="noopener noreferrer"
+                    class="flex items-center gap-4 p-6 border border-tuna-border mechanical-hover hover:border-tuna-teal hover:bg-tuna-teal/5 group">
+                    <div
+                        class="w-12 h-12 bg-tuna-teal/10 flex items-center justify-center group-hover:bg-tuna-teal group-hover:text-white text-tuna-teal">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.21-1.96 1.07-3.11-1.05.05-2.31.74-3.03 1.59-.67.79-1.25 1.95-1.09 3.08 1.18.09 2.34-.74 3.05-1.56" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold">Download App</h3>
+                        <p class="text-sm text-tuna-dark/60">Get Tuna on App Store</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- FAQ Section -->
+            <h2 class="text-2xl font-bold mb-8">Frequently Asked Questions</h2>
+
+            <!-- Getting Started -->
+            <div class="mb-10">
+                <h3 class="text-lg font-semibold text-tuna-teal mb-4 uppercase tracking-wide">Getting Started</h3>
+                <div class="space-y-3">
+                    <details class="border border-tuna-border group">
+                        <summary class="flex items-center justify-between p-5 mechanical-hover hover:bg-tuna-gray">
+                            <span class="font-medium">What is Tuna?</span>
+                            <span class="faq-icon text-tuna-teal text-2xl transition-transform">+</span>
+                        </summary>
+                        <div class="px-5 pb-5 text-tuna-dark/70 leading-relaxed">
+                            Tuna is an AI-powered food scanner app that uses Google Gemini AI to analyze food ingredient
+                            labels and detect potential allergens instantly. Simply take a photo of any food label, and
+                            Tuna will identify ingredients that might be harmful based on your dietary profile.
+                        </div>
+                    </details>
+
+                    <details class="border border-tuna-border group">
+                        <summary class="flex items-center justify-between p-5 mechanical-hover hover:bg-tuna-gray">
+                            <span class="font-medium">How do I scan a food label?</span>
+                            <span class="faq-icon text-tuna-teal text-2xl transition-transform">+</span>
+                        </summary>
+                        <div class="px-5 pb-5 text-tuna-dark/70 leading-relaxed">
+                            <ol class="list-decimal pl-5 space-y-2">
+                                <li>Open the Tuna app</li>
+                                <li>Tap the "Scan" button on the home screen</li>
+                                <li>Point your camera at the ingredient list on the food package</li>
+                                <li>Take a clear photo or select from your gallery</li>
+                                <li>Wait a few seconds for AI analysis results</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="border border-tuna-border group">
+                        <summary class="flex items-center justify-between p-5 mechanical-hover hover:bg-tuna-gray">
+                            <span class="font-medium">What allergens can Tuna detect?</span>
+                            <span class="faq-icon text-tuna-teal text-2xl transition-transform">+</span>
+                        </summary>
+                        <div class="px-5 pb-5 text-tuna-dark/70 leading-relaxed">
+                            Tuna can detect major allergens including: Gluten, Lactose, Milk, Eggs, Peanuts, Tree Nuts,
+                            Soy, Fish, Shellfish, Wheat, and Sesame. You can customize your allergen profile in Settings
+                            to receive personalized alerts.
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Subscription -->
+            <div class="mb-10">
+                <h3 class="text-lg font-semibold text-tuna-teal mb-4 uppercase tracking-wide">Subscription & Billing
+                </h3>
+                <div class="space-y-3">
+                    <details class="border border-tuna-border group">
+                        <summary class="flex items-center justify-between p-5 mechanical-hover hover:bg-tuna-gray">
+                            <span class="font-medium">What's included in the free version?</span>
+                            <span class="faq-icon text-tuna-teal text-2xl transition-transform">+</span>
+                        </summary>
+                        <div class="px-5 pb-5 text-tuna-dark/70 leading-relaxed">
+                            The free version includes 3 scans per day with full AI analysis capabilities. You can set up
+                            your allergen profile and receive detailed ingredient reports for each scan.
+                        </div>
+                    </details>
+
+                    <details class="border border-tuna-border group">
+                        <summary class="flex items-center justify-between p-5 mechanical-hover hover:bg-tuna-gray">
+                            <span class="font-medium">What does Tuna Pro include?</span>
+                            <span class="faq-icon text-tuna-teal text-2xl transition-transform">+</span>
+                        </summary>
+                        <div class="px-5 pb-5 text-tuna-dark/70 leading-relaxed">
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Unlimited daily scans</strong></li>
+                                <li>Full scan history access</li>
+                                <li>PDF export for doctors</li>
+                                <li>Safe Card sharing</li>
+                                <li>AI Nutrition Advice (yearly plan)</li>
+                                <li>Priority support</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details class="border border-tuna-border group">
+                        <summary class="flex items-center justify-between p-5 mechanical-hover hover:bg-tuna-gray">
+                            <span class="font-medium">How do I cancel my subscription?</span>
+                            <span class="faq-icon text-tuna-teal text-2xl transition-transform">+</span>
+                        </summary>
+                        <div class="px-5 pb-5 text-tuna-dark/70 leading-relaxed">
+                            <ol class="list-decimal pl-5 space-y-2">
+                                <li>Open Settings on your iPhone</li>
+                                <li>Tap your name at the top</li>
+                                <li>Tap "Subscriptions"</li>
+                                <li>Find Tuna and tap on it</li>
+                                <li>Tap "Cancel Subscription"</li>
+                            </ol>
+                            <p class="mt-3">You'll retain access until the end of your current billing period.</p>
+                        </div>
+                    </details>
+
+                    <details class="border border-tuna-border group">
+                        <summary class="flex items-center justify-between p-5 mechanical-hover hover:bg-tuna-gray">
+                            <span class="font-medium">How do I restore my purchase?</span>
+                            <span class="faq-icon text-tuna-teal text-2xl transition-transform">+</span>
+                        </summary>
+                        <div class="px-5 pb-5 text-tuna-dark/70 leading-relaxed">
+                            If you've switched devices or reinstalled the app, tap "Restore Purchases" on the
+                            subscription screen. Make sure you're signed in with the same Apple ID you used for the
+                            original purchase.
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Privacy & Data -->
+            <div class="mb-10">
+                <h3 class="text-lg font-semibold text-tuna-teal mb-4 uppercase tracking-wide">Privacy & Data</h3>
+                <div class="space-y-3">
+                    <details class="border border-tuna-border group">
+                        <summary class="flex items-center justify-between p-5 mechanical-hover hover:bg-tuna-gray">
+                            <span class="font-medium">Is my data stored on your servers?</span>
+                            <span class="faq-icon text-tuna-teal text-2xl transition-transform">+</span>
+                        </summary>
+                        <div class="px-5 pb-5 text-tuna-dark/70 leading-relaxed">
+                            No. Your profile data and scan history are stored locally on your device. We only send
+                            images to Google Gemini AI for analysis, which are processed and not stored. We don't
+                            require account creation.
+                        </div>
+                    </details>
+
+                    <details class="border border-tuna-border group">
+                        <summary class="flex items-center justify-between p-5 mechanical-hover hover:bg-tuna-gray">
+                            <span class="font-medium">How do I delete my data?</span>
+                            <span class="faq-icon text-tuna-teal text-2xl transition-transform">+</span>
+                        </summary>
+                        <div class="px-5 pb-5 text-tuna-dark/70 leading-relaxed">
+                            Go to Settings in the app and tap "Clear All Data." This will permanently delete your
+                            profile, scan history, and all preferences from your device.
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Still Need Help -->
+            <div class="bg-tuna-gray p-8 text-center mt-16">
+                <h3 class="text-xl font-bold mb-3">Still Need Help?</h3>
+                <p class="text-tuna-dark/60 mb-6">Can't find what you're looking for? Our support team is here to help.
+                </p>
+                <a href="/contact.html"
+                    class="inline-flex items-center gap-2 px-8 py-4 bg-tuna-teal text-white font-semibold mechanical-hover hover:bg-tuna-tealDark">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    Contact Support
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-tuna-border py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-tuna-dark/40">© 2026 Ahmet Tayyip Zorlutuna. All rights reserved.</p>
+                <div class="flex gap-6 text-sm">
+                    <a href="/" class="text-tuna-dark/60 hover:text-tuna-teal">Home</a>
+                    <a href="/privacy-policy.html" class="text-tuna-dark/60 hover:text-tuna-teal">Privacy Policy</a>
+                    <a href="/terms-of-service.html" class="text-tuna-dark/60 hover:text-tuna-teal">Terms</a>
+                    <a href="/help-center.html" class="text-tuna-teal font-semibold">Help Center</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
