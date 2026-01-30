@@ -33,7 +33,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Tailwind CSS -->
@@ -42,14 +43,18 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        display: ['Outfit', 'system-ui', 'sans-serif']
+                    },
                     colors: {
                         tuna: {
                             teal: '#00A896',
+                            tealLight: '#00D4AA',
                             tealDark: '#008C7D',
                             dark: '#1B263B',
-                            gray: '#F5F5F5',
-                            border: '#E5E5E5',
+                            gray: '#F8FAFB',
+                            border: '#E2E8F0',
                             warning: '#F59E0B'
                         }
                     }
@@ -62,8 +67,44 @@
             scroll-behavior: smooth;
         }
 
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .navbar-scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #00A896 0%, #00D4AA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00A896 0%, #00D4AA 100%);
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 168, 150, 0.3);
+        }
+
+        .card-premium {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
         .mechanical-hover {
-            transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
     </style>
 </head>
@@ -72,15 +113,21 @@
 
     <!-- Navigation -->
     <header role="banner">
-        <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-tuna-border">
+        <nav id="navbar" class="fixed w-full glass z-50 border-b border-tuna-border/50 transition-all duration-300">
             <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
                 <div class="flex items-center gap-3">
                     <a href="/" aria-label="Tuna - Home">
-                        <span class="text-2xl font-bold tracking-tight">Tuna</span>
+                        <span class="font-display text-2xl font-bold tracking-tight gradient-text">Tuna</span>
                     </a>
+                    <span
+                        class="hidden md:inline-flex text-xs text-tuna-dark/40 font-medium border border-tuna-border px-2 py-0.5 rounded-full">v1.0.3</span>
                 </div>
                 <a href="https://apps.apple.com/app/id6757370781" target="_blank" rel="noopener noreferrer"
-                    class="px-7 py-3 bg-tuna-dark text-white text-sm font-semibold mechanical-hover hover:bg-black">
+                    class="btn-primary px-6 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.21-1.96 1.07-3.11-1.05.05-2.31.74-3.03 1.59-.67.79-1.25 1.95-1.09 3.08 1.18.09 2.34-.74 3.05-1.56" />
+                    </svg>
                     Download App
                 </a>
             </div>
@@ -90,22 +137,30 @@
     <!-- Main Content -->
     <main class="pt-32 pb-24 px-6 max-w-4xl mx-auto">
         <article class="prose prose-lg max-w-none">
-            <p class="text-tuna-teal font-semibold tracking-widest uppercase text-sm mb-4">Legal</p>
-            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Terms of Service</h1>
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-tuna-teal/10 text-tuna-teal text-sm font-semibold mb-6">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Legal
+            </div>
+            <h1 class="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4">Terms of <span
+                    class="gradient-text">Service</span></h1>
             <p class="text-tuna-dark/50 text-sm mb-12">Last Updated: January 3, 2026</p>
 
             <div class="space-y-8 text-tuna-dark/80 leading-relaxed">
                 <p>Please read these Terms of Service ("Terms") carefully before using the Tuna mobile application
                     ("App") operated by Ahmet Tayyip Zorlutuna ("we," "our," or "us").</p>
 
-                <section>
-                    <h2 class="text-2xl font-bold text-tuna-dark mb-4">Acceptance of Terms</h2>
+                <section class="card-premium p-6 rounded-2xl">
+                    <h2 class="font-display text-2xl font-bold text-tuna-dark mb-4">Acceptance of Terms</h2>
                     <p>By downloading, installing, or using Tuna, you agree to be bound by these Terms. If you do not
                         agree, do not use the App.</p>
                 </section>
 
-                <section>
-                    <h2 class="text-2xl font-bold text-tuna-dark mb-4">Description of Service</h2>
+                <section class="card-premium p-6 rounded-2xl">
+                    <h2 class="font-display text-2xl font-bold text-tuna-dark mb-4">Description of Service</h2>
                     <p>Tuna is a mobile application that uses artificial intelligence to analyze food ingredient labels
                         and identify potential allergens. The App provides:</p>
                     <ul class="list-disc pl-6 space-y-2 mt-3">
@@ -117,8 +172,8 @@
                 </section>
 
                 <!-- Important Warning Box -->
-                <section class="bg-tuna-warning/10 border-l-4 border-tuna-warning p-6">
-                    <h2 class="text-xl font-bold text-tuna-dark mb-3 flex items-center gap-2">
+                <section class="bg-tuna-warning/10 border-l-4 border-tuna-warning p-6 rounded-r-2xl">
+                    <h2 class="font-display text-xl font-bold text-tuna-dark mb-3 flex items-center gap-2">
                         <svg class="w-6 h-6 text-tuna-warning" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
@@ -137,8 +192,8 @@
                     </ul>
                 </section>
 
-                <section>
-                    <h2 class="text-2xl font-bold text-tuna-dark mb-4">User Responsibilities</h2>
+                <section class="card-premium p-6 rounded-2xl">
+                    <h2 class="font-display text-2xl font-bold text-tuna-dark mb-4">User Responsibilities</h2>
                     <p>You agree to:</p>
                     <ul class="list-disc pl-6 space-y-2 mt-3">
                         <li>Provide accurate profile information (allergies, dietary restrictions)</li>
@@ -148,8 +203,8 @@
                     </ul>
                 </section>
 
-                <section>
-                    <h2 class="text-2xl font-bold text-tuna-dark mb-4">Subscription Terms (Tuna Pro)</h2>
+                <section class="card-premium p-6 rounded-2xl">
+                    <h2 class="font-display text-2xl font-bold text-tuna-dark mb-4">Subscription Terms (Tuna Pro)</h2>
 
                     <h3 class="text-xl font-semibold text-tuna-dark mb-3">Pricing</h3>
                     <ul class="list-disc pl-6 space-y-2 mb-4">
@@ -177,14 +232,14 @@
                     <p>We may change subscription prices; existing subscribers will be notified in advance.</p>
                 </section>
 
-                <section>
-                    <h2 class="text-2xl font-bold text-tuna-dark mb-4">Intellectual Property</h2>
+                <section class="card-premium p-6 rounded-2xl">
+                    <h2 class="font-display text-2xl font-bold text-tuna-dark mb-4">Intellectual Property</h2>
                     <p>All content, features, and functionality of Tuna are owned by us and protected by copyright,
                         trademark, and other intellectual property laws.</p>
                 </section>
 
-                <section>
-                    <h2 class="text-2xl font-bold text-tuna-dark mb-4">Limitation of Liability</h2>
+                <section class="card-premium p-6 rounded-2xl">
+                    <h2 class="font-display text-2xl font-bold text-tuna-dark mb-4">Limitation of Liability</h2>
                     <p class="uppercase font-semibold mb-3">To the maximum extent permitted by law:</p>
                     <ul class="list-disc pl-6 space-y-2">
                         <li>The App is provided "AS IS" without warranties of any kind</li>
@@ -196,54 +251,68 @@
                     </ul>
                 </section>
 
-                <section>
-                    <h2 class="text-2xl font-bold text-tuna-dark mb-4">Indemnification</h2>
+                <section class="card-premium p-6 rounded-2xl">
+                    <h2 class="font-display text-2xl font-bold text-tuna-dark mb-4">Indemnification</h2>
                     <p>You agree to indemnify and hold us harmless from any claims, damages, or expenses arising from
                         your use of the App or violation of these Terms.</p>
                 </section>
 
-                <section>
-                    <h2 class="text-2xl font-bold text-tuna-dark mb-4">Termination</h2>
+                <section class="card-premium p-6 rounded-2xl">
+                    <h2 class="font-display text-2xl font-bold text-tuna-dark mb-4">Termination</h2>
                     <p>We may terminate or suspend your access to the App at any time, without prior notice, for conduct
                         that we believe violates these Terms or is harmful to other users or us.</p>
                 </section>
 
-                <section>
-                    <h2 class="text-2xl font-bold text-tuna-dark mb-4">Changes to Terms</h2>
+                <section class="card-premium p-6 rounded-2xl">
+                    <h2 class="font-display text-2xl font-bold text-tuna-dark mb-4">Changes to Terms</h2>
                     <p>We reserve the right to modify these Terms at any time. Continued use of the App after changes
                         constitutes acceptance of the new Terms.</p>
                 </section>
 
-                <section>
-                    <h2 class="text-2xl font-bold text-tuna-dark mb-4">Governing Law</h2>
+                <section class="card-premium p-6 rounded-2xl">
+                    <h2 class="font-display text-2xl font-bold text-tuna-dark mb-4">Governing Law</h2>
                     <p>These Terms are governed by the laws of Turkey/Istanbul, without regard to conflict of law
                         principles.</p>
                 </section>
 
-                <section>
-                    <h2 class="text-2xl font-bold text-tuna-dark mb-4">Contact Us</h2>
+                <section class="card-premium p-6 rounded-2xl">
+                    <h2 class="font-display text-2xl font-bold text-tuna-dark mb-4">Contact Us</h2>
                     <p>For questions about these Terms, contact us at:</p>
                     <p class="mt-3"><strong>Email:</strong> <a href="mailto:azorlutudev@gmail.com"
-                            class="text-tuna-teal hover:text-tuna-tealDark">azorlutudev@gmail.com</a></p>
+                            class="text-tuna-teal hover:text-tuna-tealDark mechanical-hover">azorlutudev@gmail.com</a>
+                    </p>
                 </section>
             </div>
         </article>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-tuna-gray border-t border-tuna-border py-12">
+    <footer class="bg-tuna-gray border-t border-tuna-border/50 py-12">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm text-tuna-dark/40">© 2026 Ahmet Tayyip Zorlutuna. All rights reserved.</p>
+                <p class="text-sm text-tuna-dark/50">© 2026 Ahmet Tayyip Zorlutuna. All rights reserved.</p>
                 <div class="flex gap-6 text-sm">
-                    <a href="/" class="text-tuna-dark/60 hover:text-tuna-teal">Home</a>
-                    <a href="/privacy-policy.html" class="text-tuna-dark/60 hover:text-tuna-teal">Privacy Policy</a>
+                    <a href="/" class="text-tuna-dark/60 hover:text-tuna-teal mechanical-hover">Home</a>
+                    <a href="/privacy-policy.html"
+                        class="text-tuna-dark/60 hover:text-tuna-teal mechanical-hover">Privacy Policy</a>
                     <a href="/terms-of-service.html" class="text-tuna-teal font-semibold">Terms of Service</a>
-                    <a href="/contact.html" class="text-tuna-dark/60 hover:text-tuna-teal">Contact</a>
+                    <a href="/contact.html" class="text-tuna-dark/60 hover:text-tuna-teal mechanical-hover">Contact</a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Navbar Scroll Effect -->
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+    </script>
 
 </body>
 
