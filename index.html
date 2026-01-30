@@ -57,10 +57,11 @@
     <meta name="twitter:image:alt" content="Tuna App - AI-powered food scanner">
     <meta name="twitter:creator" content="@ahmettzorlutuna">
 
-    <!-- Fonts: Inter for Swiss precision -->
+    <!-- Premium Typography: Outfit (headings) + Plus Jakarta Sans (body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Tailwind CSS -->
@@ -72,20 +73,62 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Outfit', 'system-ui', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
                     },
                     colors: {
                         tuna: {
                             teal: '#00A896',
+                            tealLight: '#00D4AA',
                             tealDark: '#008C7D',
                             dark: '#1B263B',
-                            gray: '#F5F5F5',
+                            darker: '#0D1321',
+                            gray: '#F8FAFC',
+                            grayDark: '#E2E8F0',
                             border: '#E5E5E5',
                             danger: '#EF4444',
                             warning: '#F59E0B',
                             success: '#16A34A'
                         }
-                    }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'gradient': 'gradient 8s ease infinite',
+                        'fade-in': 'fadeIn 0.6s ease-out forwards',
+                        'slide-up': 'slideUp 0.6s ease-out forwards',
+                        'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        glow: {
+                            '0%': { opacity: '0.4' },
+                            '100%': { opacity: '0.8' },
+                        },
+                        gradient: {
+                            '0%, 100%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        pulseSoft: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0.7' },
+                        },
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(ellipse at center, var(--tw-gradient-stops))',
+                        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+                    },
                 }
             }
         }
@@ -221,42 +264,35 @@
     </script>
 
     <style>
-        /* Swiss Grid System */
-        .swiss-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 1rem;
-        }
+        /* ═══════════════════════════════════════════════════════ */
+        /* PREMIUM DESIGN SYSTEM - Modern Health-Tech Elegance     */
+        /* ═══════════════════════════════════════════════════════ */
 
-        /* Smooth scrolling */
+        /* Base Styles */
         html {
             scroll-behavior: smooth;
         }
 
+        body {
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+        }
+
         /* Hide scrollbar for clean look */
         ::-webkit-scrollbar {
-            width: 0px;
-            background: transparent;
+            width: 6px;
         }
 
-        /* Crisp mechanical animations */
-        .mechanical-hover {
-            transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
         }
 
-        /* Grid background pattern */
-        .grid-pattern {
-            background-image:
-                linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-            background-size: 2rem 2rem;
+        ::-webkit-scrollbar-thumb {
+            background: #00A896;
+            border-radius: 3px;
         }
 
-        /* Phone mockup styling */
-        .phone-mockup {
-            box-shadow:
-                0 25px 50px -12px rgba(0, 0, 0, 0.25),
-                0 0 0 1px rgba(0, 0, 0, 0.05);
+        ::-webkit-scrollbar-thumb:hover {
+            background: #008C7D;
         }
 
         /* Skip to content link for accessibility */
@@ -264,14 +300,412 @@
             position: absolute;
             top: -40px;
             left: 0;
-            padding: 8px;
-            background: #00A896;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #00A896, #00D4AA);
             color: white;
             z-index: 100;
+            font-weight: 600;
+            border-radius: 0 0 8px 0;
         }
 
         .skip-link:focus {
             top: 0;
+        }
+
+        /* ═══════════════════════════════════════════════════════ */
+        /* TYPOGRAPHY                                               */
+        /* ═══════════════════════════════════════════════════════ */
+
+        .font-display {
+            font-family: 'Outfit', system-ui, sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #00A896 0%, #00D4AA 50%, #00A896 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 3s ease infinite;
+        }
+
+        /* ═══════════════════════════════════════════════════════ */
+        /* GLASSMORPHISM & CARDS                                    */
+        /* ═══════════════════════════════════════════════════════ */
+
+        .glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .glass-dark {
+            background: rgba(27, 38, 59, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card-premium {
+            background: white;
+            border: 1px solid rgba(0, 168, 150, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-premium:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 168, 150, 0.3);
+            box-shadow:
+                0 20px 40px -15px rgba(0, 168, 150, 0.15),
+                0 0 0 1px rgba(0, 168, 150, 0.1);
+        }
+
+        .card-glass {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 168, 150, 0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-glass:hover {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(0, 168, 150, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* ═══════════════════════════════════════════════════════ */
+        /* GRADIENT BACKGROUNDS                                     */
+        /* ═══════════════════════════════════════════════════════ */
+
+        .bg-gradient-hero {
+            background:
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 168, 150, 0.15), transparent),
+                radial-gradient(ellipse 60% 40% at 80% 50%, rgba(0, 212, 170, 0.1), transparent),
+                linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+        }
+
+        .bg-gradient-dark {
+            background: linear-gradient(180deg, #1B263B 0%, #0D1321 100%);
+        }
+
+        .bg-gradient-teal {
+            background: linear-gradient(135deg, #00A896 0%, #00D4AA 100%);
+        }
+
+        .bg-gradient-section {
+            background:
+                linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 50%, #F8FAFC 100%);
+        }
+
+        /* Animated gradient orbs */
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.5;
+            animation: glow 4s ease-in-out infinite alternate;
+        }
+
+        .glow-orb-1 {
+            width: 300px;
+            height: 300px;
+            background: rgba(0, 168, 150, 0.3);
+            top: -100px;
+            right: 10%;
+        }
+
+        .glow-orb-2 {
+            width: 200px;
+            height: 200px;
+            background: rgba(0, 212, 170, 0.25);
+            bottom: 20%;
+            left: 5%;
+            animation-delay: 1s;
+        }
+
+        /* ═══════════════════════════════════════════════════════ */
+        /* BUTTONS & INTERACTIONS                                   */
+        /* ═══════════════════════════════════════════════════════ */
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00A896 0%, #00D4AA 100%);
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(0, 168, 150, 0.5);
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #1B263B;
+            font-weight: 600;
+            border: 2px solid #1B263B;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-secondary:hover {
+            background: #1B263B;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .mechanical-hover {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ═══════════════════════════════════════════════════════ */
+        /* PHONE MOCKUPS                                            */
+        /* ═══════════════════════════════════════════════════════ */
+
+        .phone-mockup {
+            box-shadow:
+                0 25px 60px -15px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(0, 0, 0, 0.05);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .phone-mockup:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow:
+                0 35px 70px -15px rgba(0, 168, 150, 0.25),
+                0 0 0 1px rgba(0, 168, 150, 0.1);
+        }
+
+        .phone-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .phone-float-delay {
+            animation: float 6s ease-in-out infinite;
+            animation-delay: -3s;
+        }
+
+        .phone-glow {
+            position: absolute;
+            bottom: -20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 40%;
+            background: radial-gradient(ellipse, rgba(0, 168, 150, 0.2), transparent 70%);
+            filter: blur(20px);
+            pointer-events: none;
+        }
+
+        /* ═══════════════════════════════════════════════════════ */
+        /* GRID PATTERNS                                            */
+        /* ═══════════════════════════════════════════════════════ */
+
+        .grid-pattern {
+            background-image:
+                linear-gradient(to right, rgba(0, 168, 150, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 168, 150, 0.03) 1px, transparent 1px);
+            background-size: 3rem 3rem;
+        }
+
+        .dots-pattern {
+            background-image: radial-gradient(rgba(0, 168, 150, 0.15) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* ═══════════════════════════════════════════════════════ */
+        /* ANIMATIONS                                               */
+        /* ═══════════════════════════════════════════════════════ */
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0.6;
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes gradient {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1.3);
+                opacity: 0;
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered animation delays */
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-500 {
+            animation-delay: 0.5s;
+        }
+
+        /* ═══════════════════════════════════════════════════════ */
+        /* NAVBAR                                                   */
+        /* ═══════════════════════════════════════════════════════ */
+
+        .navbar-glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 168, 150, 0.1);
+        }
+
+        .navbar-scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        /* ═══════════════════════════════════════════════════════ */
+        /* FEATURE ICONS                                            */
+        /* ═══════════════════════════════════════════════════════ */
+
+        .icon-container {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .icon-container::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: inherit;
+            background: linear-gradient(135deg, #00A896, #00D4AA);
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+
+        .icon-container:hover::after {
+            opacity: 0.15;
+        }
+
+        /* ═══════════════════════════════════════════════════════ */
+        /* BADGE STYLES                                             */
+        /* ═══════════════════════════════════════════════════════ */
+
+        .badge-glow {
+            position: relative;
+        }
+
+        .badge-glow::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(135deg, #00A896, #00D4AA);
+            border-radius: inherit;
+            z-index: -1;
+            animation: pulse-ring 2s ease-out infinite;
+        }
+
+        /* ═══════════════════════════════════════════════════════ */
+        /* PRICING CARDS                                            */
+        /* ═══════════════════════════════════════════════════════ */
+
+        .pricing-featured {
+            background: linear-gradient(180deg, rgba(0, 168, 150, 0.05) 0%, rgba(0, 212, 170, 0.02) 100%);
+            border: 2px solid rgba(0, 168, 150, 0.2);
+            position: relative;
+            overflow: visible;
+        }
+
+        .pricing-featured::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            height: 4px;
+            background: linear-gradient(90deg, #00A896, #00D4AA, #00A896);
+            background-size: 200% 100%;
+            animation: gradient 3s ease infinite;
         }
     </style>
 </head>
@@ -283,21 +717,24 @@
 
     <!-- Navigation -->
     <header role="banner">
-        <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-tuna-border"
-            aria-label="Main navigation">
+        <nav class="fixed w-full navbar-glass z-50" id="navbar" aria-label="Main navigation">
             <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
                 <div class="flex items-center gap-3">
-                    <a href="/" aria-label="Tuna - Home">
-                        <span class="text-2xl font-bold tracking-tight">Tuna</span>
+                    <a href="/" aria-label="Tuna - Home" class="flex items-center gap-2">
+                        <span
+                            class="font-display text-2xl font-bold tracking-tight bg-gradient-to-r from-tuna-teal to-tuna-tealLight bg-clip-text text-transparent">Tuna</span>
                     </a>
                     <span
-                        class="px-2.5 py-1 bg-tuna-gray text-[10px] font-semibold text-tuna-dark/60 uppercase tracking-widest"
+                        class="px-2.5 py-1 bg-tuna-teal/10 text-[10px] font-semibold text-tuna-teal uppercase tracking-widest rounded-full"
                         aria-label="Version 1.0.3">v1.0.3</span>
                 </div>
 
-                <a href="#download"
-                    class="px-7 py-3 bg-tuna-dark text-white text-sm font-semibold mechanical-hover hover:bg-black hover:translate-y-[-1px] active:translate-y-0"
+                <a href="#download" class="btn-primary px-7 py-3 rounded-full text-sm flex items-center gap-2"
                     role="button">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.21-1.96 1.07-3.11-1.05.05-2.31.74-3.03 1.59-.67.79-1.25 1.95-1.09 3.08 1.18.09 2.34-.74 3.05-1.56" />
+                    </svg>
                     Download App
                 </a>
             </div>
@@ -307,186 +744,222 @@
     <!-- Main Content -->
     <main id="main-content" role="main">
         <!-- Hero Section -->
-        <section class="pt-32 pb-24 md:pt-44 md:pb-32 px-6 max-w-7xl mx-auto" aria-labelledby="hero-heading">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-                <!-- Left Content -->
-                <div class="lg:col-span-6 space-y-8">
-                    <div class="space-y-6">
-                        <p class="text-tuna-teal font-semibold tracking-widest uppercase text-sm">AI-Powered Food
-                            Guardian</p>
-                        <h1 id="hero-heading"
-                            class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[1.05]">
-                            Know What's<br>
-                            <span class="text-tuna-teal">Truly Inside.</span>
-                        </h1>
-                    </div>
+        <section class="relative pt-32 pb-24 md:pt-44 md:pb-32 px-6 overflow-hidden bg-gradient-hero"
+            aria-labelledby="hero-heading">
+            <!-- Animated Glow Orbs -->
+            <div class="glow-orb glow-orb-1" aria-hidden="true"></div>
+            <div class="glow-orb glow-orb-2" aria-hidden="true"></div>
 
-                    <p class="text-xl md:text-2xl text-tuna-dark/65 max-w-lg leading-relaxed font-light">
-                        Your Personal AI Health Agent. Scan ingredients instantly. Detect allergens with precision. Eat
-                        with absolute confidence.
-                    </p>
+            <!-- Grid Pattern -->
+            <div class="absolute inset-0 grid-pattern opacity-40 pointer-events-none" aria-hidden="true"></div>
 
-                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                        <a href="https://apps.apple.com/app/id6757370781" target="_blank" rel="noopener noreferrer"
-                            class="group px-8 py-4 bg-tuna-teal text-white font-semibold text-lg mechanical-hover hover:bg-tuna-tealDark hover:translate-y-[-2px] active:translate-y-0 flex items-center justify-center gap-3"
-                            aria-label="Download Tuna on App Store">
-                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path
-                                    d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.21-1.96 1.07-3.11-1.05.05-2.31.74-3.03 1.59-.67.79-1.25 1.95-1.09 3.08 1.18.09 2.34-.74 3.05-1.56" />
-                            </svg>
-                            Download on App Store
-                        </a>
-                    </div>
+            <div class="max-w-7xl mx-auto relative">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                    <!-- Left Content -->
+                    <div class="lg:col-span-6 space-y-8">
+                        <div class="space-y-6">
+                            <!-- Badge -->
+                            <div
+                                class="inline-flex items-center gap-2 px-4 py-2 bg-tuna-teal/10 rounded-full border border-tuna-teal/20">
+                                <div class="w-2 h-2 bg-tuna-teal rounded-full animate-pulse"></div>
+                                <span class="text-tuna-teal font-semibold tracking-wide uppercase text-xs">AI-Powered
+                                    Food Guardian</span>
+                            </div>
 
-                    <div class="pt-6 flex items-center gap-6 text-sm text-tuna-dark/50 font-medium">
-                        <span class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-tuna-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                    d="M5 13l4 4L19 7" />
-                            </svg>
-                            Free to Try
-                        </span>
-                        <span class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-tuna-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                    d="M5 13l4 4L19 7" />
-                            </svg>
-                            Powered by Gemini AI
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Right Content - Phone Mockups -->
-                <div class="lg:col-span-6 relative">
-                    <!-- Grid Background -->
-                    <div class="absolute inset-0 grid-pattern -z-10 opacity-50" aria-hidden="true"></div>
-
-                    <!-- Phone Stack -->
-                    <div class="relative flex justify-center items-center">
-                        <!-- Back Phone -->
-                        <div
-                            class="absolute right-0 top-8 w-[260px] phone-mockup rounded-[2.5rem] border-[6px] border-tuna-dark/10 overflow-hidden transform rotate-6 opacity-90">
-                            <img src="Photos/4.png"
-                                alt="Tuna app allergen detection screen showing dangerous ingredients highlighted in red with detailed analysis"
-                                class="w-full h-auto block" width="520" height="1125" loading="lazy">
+                            <h1 id="hero-heading"
+                                class="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[1.05]">
+                                Know What's<br>
+                                <span class="gradient-text">Truly Inside.</span>
+                            </h1>
                         </div>
 
-                        <!-- Front Phone -->
-                        <div
-                            class="relative z-10 w-[280px] phone-mockup rounded-[2.5rem] border-[6px] border-tuna-dark/10 overflow-hidden">
-                            <img src="Photos/1.png"
-                                alt="Tuna app main interface displaying AI-powered food scanning feature with clean modern design"
-                                class="w-full h-auto block" width="560" height="1212" loading="eager">
+                        <p class="text-xl md:text-2xl text-tuna-dark/65 max-w-lg leading-relaxed">
+                            Your Personal AI Health Agent. Scan ingredients instantly. Detect allergens with precision.
+                            Eat with absolute confidence.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                            <a href="https://apps.apple.com/app/id6757370781" target="_blank" rel="noopener noreferrer"
+                                class="btn-primary px-8 py-4 rounded-xl text-lg flex items-center justify-center gap-3 shadow-lg shadow-tuna-teal/25"
+                                aria-label="Download Tuna on App Store">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.21-1.96 1.07-3.11-1.05.05-2.31.74-3.03 1.59-.67.79-1.25 1.95-1.09 3.08 1.18.09 2.34-.74 3.05-1.56" />
+                                </svg>
+                                Download on App Store
+                            </a>
+                        </div>
+
+                        <!-- Trust Badges -->
+                        <div class="pt-6 flex flex-wrap items-center gap-6">
+                            <div
+                                class="flex items-center gap-3 px-4 py-2 bg-white/80 rounded-full border border-tuna-border shadow-sm">
+                                <svg class="w-5 h-5 text-tuna-teal" fill="currentColor" viewBox="0 0 24 24"
+                                    aria-hidden="true">
+                                    <path
+                                        d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                                </svg>
+                                <span class="text-sm font-semibold text-tuna-dark/80">Free to Try</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-3 px-4 py-2 bg-white/80 rounded-full border border-tuna-border shadow-sm">
+                                <svg class="w-5 h-5 text-tuna-teal" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                                <span class="text-sm font-semibold text-tuna-dark/80">Powered by Gemini AI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Content - Phone Mockups -->
+                    <div class="lg:col-span-6 relative">
+                        <!-- Phone Stack -->
+                        <div class="relative flex justify-center items-center min-h-[500px] md:min-h-[600px]">
+                            <!-- Phone Glow -->
+                            <div class="phone-glow" aria-hidden="true"></div>
+
+                            <!-- Back Phone -->
+                            <div
+                                class="absolute right-4 md:right-0 top-12 w-[220px] md:w-[260px] phone-mockup phone-float-delay rounded-[2.5rem] border-[6px] border-tuna-dark/10 overflow-hidden transform rotate-6">
+                                <img src="Photos/4.png"
+                                    alt="Tuna app allergen detection screen showing dangerous ingredients highlighted in red with detailed analysis"
+                                    class="w-full h-auto block" width="520" height="1125" loading="lazy">
+                            </div>
+
+                            <!-- Front Phone -->
+                            <div
+                                class="relative z-10 w-[240px] md:w-[280px] phone-mockup phone-float rounded-[2.5rem] border-[6px] border-tuna-dark/10 overflow-hidden shadow-2xl">
+                                <img src="Photos/1.png"
+                                    alt="Tuna app main interface displaying AI-powered food scanning feature with clean modern design"
+                                    class="w-full h-auto block" width="560" height="1212" loading="eager">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Features Grid -->
-        <section class="py-28 bg-tuna-gray border-y border-tuna-border" aria-labelledby="features-heading">
-            <div class="max-w-7xl mx-auto px-6">
+        <!-- Features Grid - Bento Style -->
+        <section class="py-28 relative overflow-hidden" aria-labelledby="features-heading">
+            <!-- Background -->
+            <div class="absolute inset-0 bg-gradient-section" aria-hidden="true"></div>
+            <div class="absolute inset-0 dots-pattern opacity-30" aria-hidden="true"></div>
+
+            <div class="max-w-7xl mx-auto px-6 relative">
                 <!-- Section Header -->
-                <div class="mb-20 max-w-2xl">
-                    <p class="text-tuna-teal font-semibold tracking-widest uppercase text-sm mb-4">Capabilities</p>
-                    <h2 id="features-heading" class="text-4xl md:text-5xl font-bold tracking-tight mb-6">Precision
-                        Engineered<br>for Safety.</h2>
+                <div class="text-center mb-20 max-w-3xl mx-auto">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-tuna-teal/10 rounded-full border border-tuna-teal/20 mb-6">
+                        <span class="text-tuna-teal font-semibold tracking-wide uppercase text-xs">Capabilities</span>
+                    </div>
+                    <h2 id="features-heading" class="font-display text-4xl md:text-5xl font-bold tracking-tight mb-6">
+                        Precision Engineered<br>
+                        <span class="gradient-text">for Safety.</span>
+                    </h2>
                     <p class="text-tuna-dark/60 text-xl leading-relaxed">Every feature in Tuna is designed with one
                         goal: to filter out uncertainty from your diet.</p>
                 </div>
 
-                <!-- Feature Cards -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-tuna-border border border-tuna-border"
-                    role="list">
-                    <!-- Feature 1: AI Analysis -->
-                    <article class="bg-white p-10 lg:p-12 mechanical-hover hover:bg-tuna-teal/5 group" role="listitem">
-                        <div class="w-14 h-14 bg-tuna-teal/10 flex items-center justify-center mb-8 mechanical-hover group-hover:bg-tuna-teal group-hover:text-white text-tuna-teal"
-                            aria-hidden="true">
-                            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
+                <!-- Bento Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" role="list">
+
+                    <!-- Feature 1: AI Analysis - Large Card -->
+                    <article
+                        class="card-premium p-8 lg:p-10 rounded-2xl md:col-span-2 lg:col-span-2 lg:row-span-1 group"
+                        role="listitem">
+                        <div class="flex flex-col md:flex-row gap-8 items-start">
+                            <div class="w-16 h-16 bg-gradient-to-br from-tuna-teal to-tuna-tealLight rounded-2xl flex items-center justify-center text-white shadow-lg shadow-tuna-teal/20 flex-shrink-0"
+                                aria-hidden="true">
+                                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-display text-2xl font-bold mb-3 tracking-tight">Instant AI Analysis</h3>
+                                <p class="text-tuna-dark/60 leading-relaxed text-lg">Powered by Gemini Flash 2.0. Scan
+                                    ingredients in milliseconds with higher accuracy than human review. Our AI
+                                    understands complex ingredient lists and identifies hidden allergens instantly.</p>
+                                <div class="mt-6 flex items-center gap-4">
+                                    <span
+                                        class="px-3 py-1 bg-tuna-teal/10 text-tuna-teal text-sm font-semibold rounded-full">
+                                        < 500ms</span>
+                                            <span
+                                                class="px-3 py-1 bg-tuna-teal/10 text-tuna-teal text-sm font-semibold rounded-full">99.7%
+                                                Accuracy</span>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 tracking-tight">Instant AI Analysis</h3>
-                        <p class="text-tuna-dark/60 leading-relaxed">Powered by Gemini Flash 2.0. Scan ingredients in
-                            milliseconds with higher accuracy than human review.</p>
                     </article>
 
                     <!-- Feature 2: Allergen Alerts -->
-                    <article class="bg-white p-10 lg:p-12 mechanical-hover hover:bg-tuna-danger/5 group"
-                        role="listitem">
-                        <div class="w-14 h-14 bg-tuna-danger/10 flex items-center justify-center mb-8 mechanical-hover group-hover:bg-tuna-danger group-hover:text-white text-tuna-danger"
+                    <article class="card-premium p-8 lg:p-10 rounded-2xl group" role="listitem">
+                        <div class="w-14 h-14 bg-gradient-to-br from-tuna-danger to-red-400 rounded-xl flex items-center justify-center text-white shadow-lg shadow-tuna-danger/20 mb-6"
                             aria-hidden="true">
                             <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 tracking-tight">Proactive Alerts</h3>
+                        <h3 class="font-display text-xl font-bold mb-3 tracking-tight">Proactive Alerts</h3>
                         <p class="text-tuna-dark/60 leading-relaxed">System-level notifications for allergens. Custom
                             risk profiles for Gluten, Lactose, Nuts, and more.</p>
                     </article>
 
                     <!-- Feature 3: PDF Reports -->
-                    <article class="bg-white p-10 lg:p-12 mechanical-hover hover:bg-tuna-teal/5 group" role="listitem">
-                        <div class="w-14 h-14 bg-tuna-teal/10 flex items-center justify-center mb-8 mechanical-hover group-hover:bg-tuna-teal group-hover:text-white text-tuna-teal"
+                    <article class="card-premium p-8 lg:p-10 rounded-2xl group" role="listitem">
+                        <div class="w-14 h-14 bg-gradient-to-br from-tuna-teal to-tuna-tealLight rounded-xl flex items-center justify-center text-white shadow-lg shadow-tuna-teal/20 mb-6"
                             aria-hidden="true">
                             <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 tracking-tight">Medical-Grade Reports</h3>
+                        <h3 class="font-display text-xl font-bold mb-3 tracking-tight">Medical-Grade Reports</h3>
                         <p class="text-tuna-dark/60 leading-relaxed">Export scan history and nutrition advice to PDF.
                             Ready to share with your healthcare provider.</p>
                     </article>
-                </div>
 
-                <!-- Additional Features Row -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-tuna-border border border-t-0 border-tuna-border"
-                    role="list">
                     <!-- Feature 4: NOVA Scoring -->
-                    <article class="bg-white p-10 lg:p-12 mechanical-hover hover:bg-tuna-warning/5 group"
-                        role="listitem">
-                        <div class="w-14 h-14 bg-tuna-warning/10 flex items-center justify-center mb-8 mechanical-hover group-hover:bg-tuna-warning group-hover:text-white text-tuna-warning"
+                    <article class="card-premium p-8 lg:p-10 rounded-2xl group" role="listitem">
+                        <div class="w-14 h-14 bg-gradient-to-br from-tuna-warning to-amber-400 rounded-xl flex items-center justify-center text-white shadow-lg shadow-tuna-warning/20 mb-6"
                             aria-hidden="true">
                             <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 tracking-tight">NOVA Health Scoring</h3>
+                        <h3 class="font-display text-xl font-bold mb-3 tracking-tight">NOVA Health Scoring</h3>
                         <p class="text-tuna-dark/60 leading-relaxed">Understand food processing levels at a glance. From
                             natural to ultra-processed — we decode it all.</p>
                     </article>
 
                     <!-- Feature 5: Safe Card -->
-                    <article class="bg-white p-10 lg:p-12 mechanical-hover hover:bg-tuna-success/5 group"
-                        role="listitem">
-                        <div class="w-14 h-14 bg-tuna-success/10 flex items-center justify-center mb-8 mechanical-hover group-hover:bg-tuna-success group-hover:text-white text-tuna-success"
+                    <article class="card-premium p-8 lg:p-10 rounded-2xl group" role="listitem">
+                        <div class="w-14 h-14 bg-gradient-to-br from-tuna-success to-emerald-400 rounded-xl flex items-center justify-center text-white shadow-lg shadow-tuna-success/20 mb-6"
                             aria-hidden="true">
                             <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 tracking-tight">Safe Card Sharing</h3>
+                        <h3 class="font-display text-xl font-bold mb-3 tracking-tight">Safe Card Sharing</h3>
                         <p class="text-tuna-dark/60 leading-relaxed">Share your dietary restrictions with restaurants
                             and friends. Dine out with confidence.</p>
                     </article>
 
                     <!-- Feature 6: AI Nutrition -->
-                    <article class="bg-white p-10 lg:p-12 mechanical-hover hover:bg-tuna-teal/5 group" role="listitem">
-                        <div class="w-14 h-14 bg-tuna-teal/10 flex items-center justify-center mb-8 mechanical-hover group-hover:bg-tuna-teal group-hover:text-white text-tuna-teal"
+                    <article class="card-premium p-8 lg:p-10 rounded-2xl group" role="listitem">
+                        <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-400 rounded-xl flex items-center justify-center text-white shadow-lg shadow-purple-500/20 mb-6"
                             aria-hidden="true">
                             <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 tracking-tight">AI Nutrition Advice</h3>
+                        <h3 class="font-display text-xl font-bold mb-3 tracking-tight">AI Nutrition Advice</h3>
                         <p class="text-tuna-dark/60 leading-relaxed">Get personalized recommendations and healthier
                             alternatives powered by intelligent analysis.</p>
                     </article>
@@ -495,186 +968,228 @@
         </section>
 
         <!-- App Screenshots Showcase -->
-        <section class="py-28 max-w-7xl mx-auto px-6" aria-labelledby="screenshots-heading">
-            <div class="text-center mb-16">
-                <p class="text-tuna-teal font-semibold tracking-widest uppercase text-sm mb-4">Experience</p>
-                <h2 id="screenshots-heading" class="text-4xl md:text-5xl font-bold tracking-tight">Designed for Clarity.
-                </h2>
-            </div>
+        <section class="py-28 relative overflow-hidden bg-gradient-hero" aria-labelledby="screenshots-heading">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 grid-pattern opacity-30" aria-hidden="true"></div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6" role="list"
-                aria-label="App screenshots gallery">
-                <figure class="phone-mockup rounded-[1.5rem] border-[4px] border-tuna-dark/10 overflow-hidden"
-                    role="listitem">
-                    <img src="Photos/2.png"
-                        alt="Tuna app scanning food ingredient labels with real-time AI analysis overlay"
-                        class="w-full h-auto block" width="390" height="844" loading="lazy">
-                </figure>
-                <figure class="phone-mockup rounded-[1.5rem] border-[4px] border-tuna-dark/10 overflow-hidden"
-                    role="listitem">
-                    <img src="Photos/5.png"
-                        alt="Tuna app scan history view showing chronological list of analyzed products"
-                        class="w-full h-auto block" width="390" height="844" loading="lazy">
-                </figure>
-                <figure class="phone-mockup rounded-[1.5rem] border-[4px] border-tuna-dark/10 overflow-hidden"
-                    role="listitem">
-                    <img src="Photos/7.png"
-                        alt="Tuna app personalized nutrition advice screen with AI-generated health recommendations"
-                        class="w-full h-auto block" width="390" height="844" loading="lazy">
-                </figure>
-                <figure class="phone-mockup rounded-[1.5rem] border-[4px] border-tuna-dark/10 overflow-hidden"
-                    role="listitem">
-                    <img src="Photos/9.png"
-                        alt="Tuna app NOVA food processing score explanation with visual scale indicator"
-                        class="w-full h-auto block" width="390" height="844" loading="lazy">
-                </figure>
+            <div class="max-w-7xl mx-auto px-6 relative">
+                <div class="text-center mb-16 max-w-3xl mx-auto">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-tuna-teal/10 rounded-full border border-tuna-teal/20 mb-6">
+                        <span class="text-tuna-teal font-semibold tracking-wide uppercase text-xs">Experience</span>
+                    </div>
+                    <h2 id="screenshots-heading"
+                        class="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4">
+                        Designed for <span class="gradient-text">Clarity.</span>
+                    </h2>
+                    <p class="text-tuna-dark/60 text-xl">Clean interface, powerful protection. See the app in action.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8" role="list"
+                    aria-label="App screenshots gallery">
+                    <figure
+                        class="phone-mockup rounded-[1.8rem] border-[4px] border-tuna-dark/10 overflow-hidden bg-white shadow-xl"
+                        role="listitem">
+                        <img src="Photos/2.png"
+                            alt="Tuna app scanning food ingredient labels with real-time AI analysis overlay"
+                            class="w-full h-auto block" width="390" height="844" loading="lazy">
+                    </figure>
+                    <figure
+                        class="phone-mockup rounded-[1.8rem] border-[4px] border-tuna-dark/10 overflow-hidden bg-white shadow-xl"
+                        role="listitem">
+                        <img src="Photos/5.png"
+                            alt="Tuna app scan history view showing chronological list of analyzed products"
+                            class="w-full h-auto block" width="390" height="844" loading="lazy">
+                    </figure>
+                    <figure
+                        class="phone-mockup rounded-[1.8rem] border-[4px] border-tuna-dark/10 overflow-hidden bg-white shadow-xl"
+                        role="listitem">
+                        <img src="Photos/7.png"
+                            alt="Tuna app personalized nutrition advice screen with AI-generated health recommendations"
+                            class="w-full h-auto block" width="390" height="844" loading="lazy">
+                    </figure>
+                    <figure
+                        class="phone-mockup rounded-[1.8rem] border-[4px] border-tuna-dark/10 overflow-hidden bg-white shadow-xl"
+                        role="listitem">
+                        <img src="Photos/9.png"
+                            alt="Tuna app NOVA food processing score explanation with visual scale indicator"
+                            class="w-full h-auto block" width="390" height="844" loading="lazy">
+                    </figure>
+                </div>
             </div>
         </section>
 
         <!-- Pricing Section -->
-        <section id="download" class="py-28 bg-tuna-gray border-y border-tuna-border" aria-labelledby="pricing-heading">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-20">
-                    <p class="text-tuna-teal font-semibold tracking-widest uppercase text-sm mb-4">Investment</p>
-                    <h2 id="pricing-heading" class="text-4xl md:text-5xl font-bold tracking-tight mb-6">Simple,
-                        Transparent Pricing.</h2>
-                    <p class="text-tuna-dark/60 text-xl max-w-2xl mx-auto">Start with 3 free scans per day. Upgrade to
-                        Pro for unlimited protection.</p>
+        <section id="download" class="py-28 relative" aria-labelledby="pricing-heading">
+            <!-- Background -->
+            <div class="absolute inset-0 bg-gradient-section" aria-hidden="true"></div>
+
+            <div class="max-w-7xl mx-auto px-6 relative">
+                <div class="text-center mb-16 max-w-3xl mx-auto">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-tuna-teal/10 rounded-full border border-tuna-teal/20 mb-6">
+                        <span class="text-tuna-teal font-semibold tracking-wide uppercase text-xs">Investment</span>
+                    </div>
+                    <h2 id="pricing-heading" class="font-display text-4xl md:text-5xl font-bold tracking-tight mb-6">
+                        Simple, <span class="gradient-text">Transparent</span> Pricing.
+                    </h2>
+                    <p class="text-tuna-dark/60 text-xl">Start with 3 free scans per day. Upgrade to Pro for unlimited
+                        protection.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto border border-tuna-border divide-y md:divide-y-0 md:divide-x divide-tuna-border bg-white"
-                    role="list" aria-label="Pricing plans">
+                <div class="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-8 pt-4" role="list"
+                    aria-label="Pricing plans" style="overflow: visible;">
 
                     <!-- Weekly Plan -->
-                    <article class="p-10 lg:p-14 mechanical-hover hover:bg-tuna-gray/50 flex flex-col" role="listitem">
-                        <h3 class="text-xl font-medium text-tuna-dark/60 mb-6">Weekly</h3>
+                    <article class="card-premium p-8 lg:p-10 rounded-2xl flex flex-col mt-6" role="listitem">
+                        <h3 class="font-display text-xl font-semibold text-tuna-dark/60 mb-6">Weekly</h3>
                         <div class="mb-2">
-                            <span class="text-5xl font-bold tracking-tight">$4.99</span>
+                            <span class="font-display text-5xl font-bold tracking-tight">$4.99</span>
                             <span class="text-tuna-dark/40 text-lg">/week</span>
                         </div>
-                        <p class="text-sm text-tuna-dark/40 mb-8">Billed weekly, cancel anytime</p>
+                        <p class="text-sm text-tuna-dark/50 mb-8">Billed weekly, cancel anytime</p>
 
                         <ul class="space-y-4 text-tuna-dark/80 mb-10" aria-label="Weekly plan features">
                             <li class="flex items-center gap-3">
-                                <svg class="w-5 h-5 text-tuna-teal flex-shrink-0" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
+                                <div class="w-5 h-5 bg-tuna-teal/10 rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-tuna-teal" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
                                 Unlimited Daily Scans
                             </li>
                             <li class="flex items-center gap-3">
-                                <svg class="w-5 h-5 text-tuna-teal flex-shrink-0" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
+                                <div class="w-5 h-5 bg-tuna-teal/10 rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-tuna-teal" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
                                 Full Scan History
                             </li>
                             <li class="flex items-center gap-3">
-                                <svg class="w-5 h-5 text-tuna-teal flex-shrink-0" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
+                                <div class="w-5 h-5 bg-tuna-teal/10 rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-tuna-teal" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
                                 PDF Export for Doctors
                             </li>
                             <li class="flex items-center gap-3">
-                                <svg class="w-5 h-5 text-tuna-teal flex-shrink-0" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
+                                <div class="w-5 h-5 bg-tuna-teal/10 rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-tuna-teal" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
                                 Safe Card Sharing
                             </li>
                         </ul>
 
                         <a href="https://apps.apple.com/app/id6757370781" target="_blank" rel="noopener noreferrer"
-                            class="block w-full py-4 text-center border-2 border-tuna-dark font-semibold mechanical-hover hover:bg-tuna-dark hover:text-white mt-auto"
-                            role="button" aria-label="Start Weekly subscription at $4.99 per week">
+                            class="btn-secondary block w-full py-4 text-center rounded-xl mt-auto" role="button"
+                            aria-label="Start Weekly subscription at $4.99 per week">
                             Start Weekly
                         </a>
                     </article>
 
-                    <!-- Yearly Plan -->
-                    <article class="p-10 lg:p-14 bg-tuna-teal/5 relative overflow-hidden flex flex-col" role="listitem">
+                    <!-- Yearly Plan - Featured -->
+                    <article class="pricing-featured p-8 lg:p-10 rounded-2xl relative flex flex-col mt-6"
+                        role="listitem">
                         <!-- Best Value Badge -->
-                        <div class="absolute top-0 right-0 bg-tuna-teal text-white text-xs font-bold px-4 py-1.5 uppercase tracking-wider"
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-tuna-teal to-tuna-tealLight text-white text-xs font-bold px-4 py-1.5 uppercase tracking-wider rounded-full shadow-lg shadow-tuna-teal/30 whitespace-nowrap"
                             aria-label="Best value plan">
-                            Best Value
+                            ✨ Best Value
                         </div>
 
-                        <h3 class="text-xl font-medium text-tuna-teal mb-6">Yearly</h3>
+                        <h3 class="font-display text-xl font-semibold text-tuna-teal mb-6 mt-4">Yearly</h3>
                         <div class="mb-2">
-                            <span class="text-5xl font-bold tracking-tight">$29.99</span>
+                            <span class="font-display text-5xl font-bold tracking-tight">$29.99</span>
                             <span class="text-tuna-dark/40 text-lg">/year</span>
                         </div>
-                        <p class="text-sm text-tuna-success font-semibold mb-8">Save 88% compared to weekly</p>
+                        <p class="text-sm text-tuna-success font-semibold mb-8">💰 Save 88% compared to weekly</p>
 
                         <ul class="space-y-4 text-tuna-dark/80 mb-10" aria-label="Yearly plan features">
                             <li class="flex items-center gap-3">
-                                <svg class="w-5 h-5 text-tuna-teal flex-shrink-0" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
-                                Everything in Weekly
+                                <div class="w-5 h-5 bg-tuna-teal rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
+                                <span class="font-medium">Everything in Weekly</span>
                             </li>
                             <li class="flex items-center gap-3">
-                                <svg class="w-5 h-5 text-tuna-teal flex-shrink-0" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
+                                <div class="w-5 h-5 bg-tuna-teal rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
                                 AI Nutrition Advice
                             </li>
                             <li class="flex items-center gap-3">
-                                <svg class="w-5 h-5 text-tuna-teal flex-shrink-0" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
+                                <div class="w-5 h-5 bg-tuna-teal rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
                                 Detailed Health Analysis
                             </li>
                             <li class="flex items-center gap-3">
-                                <svg class="w-5 h-5 text-tuna-teal flex-shrink-0" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
+                                <div class="w-5 h-5 bg-tuna-teal rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
                                 Priority Support
                             </li>
                             <li class="flex items-center gap-3">
-                                <svg class="w-5 h-5 text-tuna-teal flex-shrink-0" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
+                                <div class="w-5 h-5 bg-tuna-teal rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
                                 Early Access to Features
                             </li>
                         </ul>
 
                         <a href="https://apps.apple.com/app/id6757370781" target="_blank" rel="noopener noreferrer"
-                            class="block w-full py-4 text-center bg-tuna-teal text-white font-semibold mechanical-hover hover:bg-tuna-tealDark shadow-lg shadow-tuna-teal/20 mt-auto"
+                            class="btn-primary block w-full py-4 text-center rounded-xl shadow-lg shadow-tuna-teal/30 mt-auto"
                             role="button" aria-label="Upgrade to Yearly subscription at $29.99 per year - Best Value">
                             Upgrade Now
                         </a>
                     </article>
                 </div>
 
-                <p class="text-center text-sm text-tuna-dark/40 mt-8">All plans include a 7-day free trial. No
+                <p class="text-center text-sm text-tuna-dark/50 mt-10">All plans include a 7-day free trial. No
                     commitment required.</p>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-tuna-border py-20" role="contentinfo">
+    <footer class="bg-white border-t border-tuna-border/50 py-20" role="contentinfo">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
                 <!-- Brand -->
                 <div class="md:col-span-5">
-                    <h4 class="font-bold text-2xl tracking-tight mb-4">Tuna</h4>
+                    <h4 class="font-display font-bold text-2xl tracking-tight mb-4 gradient-text">Tuna</h4>
                     <p class="text-tuna-dark/60 max-w-sm leading-relaxed mb-6">
                         Designed for clarity. Built for safety.<br>
                         The essential tool for modern dietary management.
@@ -719,20 +1234,34 @@
             </div>
 
             <!-- Bottom Bar -->
-            <div class="pt-8 border-t border-tuna-border flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm text-tuna-dark/40">© 2026 Ahmet Tayyip Zorlutuna. All rights reserved.</p>
-                <p class="text-sm text-tuna-dark/40">Made with precision in Turkey 🇹🇷</p>
+            <div
+                class="pt-8 border-t border-tuna-border/50 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-tuna-dark/50">© 2026 Ahmet Tayyip Zorlutuna. All rights reserved.</p>
+                <p class="text-sm text-tuna-dark/50">Made with ❤️ in Turkey 🇹🇷</p>
             </div>
         </div>
     </footer>
 
     <!-- iOS Compliance Badge -->
     <aside class="fixed bottom-6 right-6 z-40" aria-label="System requirements">
-        <div class="bg-white/95 backdrop-blur border border-tuna-border px-5 py-3 shadow-xl flex items-center gap-3">
-            <div class="w-2.5 h-2.5 bg-tuna-teal animate-pulse" aria-hidden="true"></div>
+        <div class="glass px-5 py-3 rounded-full shadow-xl flex items-center gap-3 border border-tuna-teal/20">
+            <div class="w-2.5 h-2.5 bg-tuna-teal rounded-full animate-pulse" aria-hidden="true"></div>
             <span class="text-xs font-semibold text-tuna-dark/80 tracking-wide">Requires iOS 18.5+</span>
         </div>
     </aside>
+
+    <!-- Simple Navbar Scroll Effect -->
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+    </script>
 
 </body>
 
